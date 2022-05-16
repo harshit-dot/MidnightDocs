@@ -19,6 +19,15 @@ class blogpost(models.Model):
     image=models.ImageField(default='')
     def __str__(self):
         return self.catagory
+class appointment(models.Model):
+    ids=models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    catagory = models.CharField(max_length=40)
+    age = models.CharField(max_length=40)
+    gender = models.TextField()
+    email = models.CharField(max_length=40)
+    mobile_number= models.CharField(max_length=10)
+    timestamp = models.DateTimeField(auto_now_add=True, blank=True)
 class image(models.Model):
     names=models.CharField(max_length=30)
     images=models.ImageField()

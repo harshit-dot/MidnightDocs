@@ -3,12 +3,19 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS -->
+        <!-- CSS only -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
-        <title>Bloggers</title>
+        <title>MidnightDocs</title>
        <style>
+
+
+
+       body{
+         background-color: #e8e8ed;
+       }
            .harsh{
            position:fixed;
            }
@@ -21,7 +28,7 @@
   {% include 'app1/message.html' %}
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" style="font-family: cursive;" href="#">BLOGGERS POINT</a>
+  <a class="navbar-brand" style="font-family: cursive;" href="#">MidnightDocs</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -48,7 +55,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                <div style="text-align:center; font-size:130%;" >Hello {{user.first_name}}!</div>
-          <a class="dropdown-item mt-3" href="/createblog/{{user.username}}" style="text-align:center;">Create Blog</a>
+          <a class="dropdown-item mt-3" href="/createblog/{{user.username}}" style="text-align:center;">Take an appointment</a>
             <a class="dropdown-item mt-3" href="/myprofile/{{user.username}}" style="text-align:center;">My Profile</a>
 
 
@@ -73,11 +80,7 @@
 
       
     </ul>
-    <form action="search" method="POST" class="form-inline my-2 my-lg-0">
-        {% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="Search By Category" aria-label="Search" name="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
   </div>
 </nav>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -88,24 +91,24 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'app1/blog4.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h1.jpg' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Create Your Blog</h5>
-        <p>“Don’t try to plan everything out to the very last detail. I’m a big believer in just getting it out there: create a minimal viable product or website, launch it, and get feedback.”</p>
+        <h5>― Aude Mermilliod</h5>
+        <p>“Doctors who want power will do anything to get it; healers will do anything to get away from it.”</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'app1/blog5.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h2.png' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Read Blogs</h5>
-        <p>“A blog is only as interesting as the interest shown in others.”</p>
+        <h5>― Steven Magee</h5>
+        <p>“Doctors and nurses are brave souls during a pandemic.”</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'app1/blog7.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h3.jpg' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Interact with your fiends</h5>
-        <p>“Blogging is just writing — writing using a particularly efficient type of publishing technology.”
+        <h5>― Nitya Prakash</h5>
+        <p>“You sit in a hospital's emergency area and realize how god damn valuable health and life is - something so many of us takes for granted.”
 
 </p>
       </div>
@@ -122,45 +125,101 @@
 </div>
     <div class="container maine-tujhe-bola-na">
 <div class="row">
-    <div class="col col-md-8 col-sm-8 col-lg-8 col-xs-8">
+    <div>
  <div class="mt-5">
 
-        <h1 style="text-align: center; font-family: cursive;">latest Blogs</h1>
+        <h1 class="mb-5" style="text-align: center; font-family: cursive;"> OUR SUCCESS STORIES</h1>
         </div>
 
-    {% for i in blog reversed %}
-   <div class="card mt-5">
-           <img src="{{i.image}}" class="card-img-top" height="420px" width="90%">
+        <div class="container">
+  <div class="row mb-5">
+
+    <div class="col" style="background-color:#dfcfee;">
+      <div class="card mt-5 ">
+           <img src="{% static 'app1/har.jpeg' %}" class="card-img-top" height="200px" width="80%">
 
   <h2 class="card-header">
-    {{i.title}}
+    Shivani Metha
   </h2>
-       <h3 class="ml-4 mt-3"> {{i.catagory}}</h3>
-       <h4 class="ml-4">{{i.email}}</h4>
-       <h6 class="ml-4">{{i.timestamp}}</h6>
+       <h3 class="ml-4 mt-3">Physician</h3>
+       <h4 class="ml-4">metha12@gmail.com</h4>
+       <h6 class="ml-4">May 17, 2022, 1:10 a.m.</h6>
   <div class="card-body">
-    <p class="card-text">{{i.textarea |truncatechars:200}}</p>
-    <a href="blogpost/{{i.ids}}" class="btn btn-info">Read More</a>
+    <p class="card-text">Mr. and Mrs. Mehta was blessed with a child baby 5 years ago. After few years the baby was suffering from pneumonia and continue suffering from the disease, once a night the health of the
+baby was very bad, then Mr. Mehta got to know with his friend Mr. Khanna about our websites MidnightDocs and book a slot for the consultance to Doctor and got an appointment within
+15 minutes.</p>
   </div>
 </div>
-    {% endfor %}
     </div>
-    <div class="col col-md-4 col-sm-4 col-xs-4 col-lg-4 mt-5  ">
-        <div class="mt-5">
-            <div class="mt-5">
-                <section>
-                <img src="{% static 'app1/blog8.jpg' %}"  height="250px" width="350px" class="mt-5 ">
-                </section>
-    </div>
-    </div>
-    </div>
+
+    <div class="col  " style="background-color:#c9c6cb;">
+
+ <div class="card mt-5 ">
+           <img src="{% static 'app1/har2.jpeg' %}" class="card-img-top" height="200px" width="80%">
+
+  <h2 class="card-header">
+    Pawan Kumar
+  </h2>
+       <h3 class="ml-4 mt-3"> Physician</h3>
+       <h4 class="ml-4">kumarji@gmail.com</h4>
+       <h6 class="ml-4">May 17, 2022, 1:08 a.m.</h6>
+  <div class="card-body">
+    <p class="card-text">Mr. Kumar got wet on a rainy day. After coming to home he had his bath. After few hours he felt ill with sneeze and fever. He was also feeling cold. Then he went to our website
+MidnightDocs and book an appointment and got his appointment within 5 minutes and got diagnosed. Mr. Kumar after having the medicines is now feeling well and happy and thanks MidnightDocs</p>
+  </div>
+</div>
+</div>
+
+       <div class="col " style="background-color:#dfcfee;">
+      <div class="card mt-5 ">
+           <img src="{% static 'app1/har3.jpeg' %}" class="card-img-top" height="200px" width="80%">
+
+  <h2 class="card-header">
+    Stitu Singh
+  </h2>
+       <h3 class="ml-4 mt-3"> Physician</h3>
+       <h4 class="ml-4">Istuti@gmail.com</h4>
+       <h6 class="ml-4">May 17, 2022, 1:11 a.m.</h6>
+  <div class="card-body">
+    <p class="card-text">Mrs. Istuti an Engineering student was suffering from various pain in the body from last few days. The pain was so severe that she even was not able to walk properly.
+She got to know to our websites MednightDocs and then book an appointment and got his appointment within 10 minutes and got diagnosed. After few days she got recoverd
+and again began to walk as earlier. </p>
+  </div>
 </div>
     </div>
+
+</div>
+
+
+    </div>
+
+</div>
+    </div>
+
+        <div class="container-fluid mt-5 mb-5" style=";
+    background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url({% static 'app1/h10.jpg' %}) ;
+    background-size: 100%;
+     background-position: center;
+    background-attachment: fixed;
+    color: aliceblue; ">
+             <div class="mt-5 text-center">
+      {% if not user.is_authenticated %}
+        <h2 class="text-center mt-5">For having an appointment</h2>
+        <a class="nav-link btn-dark mt-5"  data-target="#mymodal" data-toggle="modal">Login</a>
+        <a data-target="#mymodal1" data-toggle="modal" type="button"  class="nav-link btn-dark mt-2" >SignUp</a>
+
+        {% else %}
+            <h2>For having an appointment</h2>
+            <a class=" mt-5 btn btn-dark"  href="/createblog/{{user.username}}" style="text-align:center;">Take an appointment</a>
+
+        {% endif %}
+        </div>
+        </div>
     <div class="modal" id="mymodal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="text-center text-primary">login</h3>
+                    <h3 class="text-center text-dark">LOGIN</h3>
                     <button type="button" class="close" data-dismiss="modal"> &times; </button>
                 </div>
                 <div class="modal-body">
@@ -178,15 +237,11 @@
     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
        <small id="emailHelp" class="form-text text-muted">We'll never share your username or password with anyone else.</small>
   </div>
-                            <div class="form-group">
-    <label for="exampleInputPassword1">Confirm Password</label>
-
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password1">
-  </div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="forgot" class="btn btn-primary">Forgot Password</a>
+
+  <button type="submit" class="btn btn-dark">Submit</button>
+                            <a href="forgot" class="btn btn-dark">Forgot Password</a>
 
 
                     </form>
@@ -198,7 +253,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="text-center text-primary">Signup</h3>
+                    <h3 class="text-center text-dark">SignUp</h3>
                     <button type="button" class="close" data-dismiss="modal"> &times; </button>
                 </div>
                 <div class="modal-body">
@@ -241,7 +296,7 @@
 
     <input type="password" class="form-control" id="exampleInputPassword1" name="password1">
   </div>
-                          <button type="submit" class="btn btn-primary">Submit</button></form>
+                          <button type="submit" class="btn btn-dark">Submit</button></form>
 
 
                 </div>
@@ -251,7 +306,8 @@
     <script>
 
    </script>
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

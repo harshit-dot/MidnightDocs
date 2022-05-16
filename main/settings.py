@@ -29,7 +29,7 @@ SECRET_KEY = 'v_%ax8v--#2+r%_14!2d+j3twa-y^@wp=w@feuzx5*$cw$(00*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','bloggerspoint1.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','midnightdocs.herokuapp.com']
 
 
 # Application definition

@@ -7,7 +7,7 @@
 <div class="container mt-5 mb-5">
 
     <div class="row">
-        <div class="col col-md-4 col-sm-4 col-lg-4 col-xs-4 box"  >
+        <div class="col box"  style="background-color:#dfcfee;">
 <div class="box " style="position:fixed">
 <h2  class="mt-5">Hello {{ bog.first_name}}</h2>
 <!-- <img src="{{iar.images}}" class="card-img-top" height="200px" width="250px">-->
@@ -20,31 +20,30 @@
 
         </div>
         </div>
-      <div class="col col-md-8 col-lg-8 col-xs-8 col-sm-8">
+      <div class="col" style="background-color:#c9c6cb;">
           {% if kar is 0 %}
-          <div style="margin-top:20%; font-size:30px;">you have not uploaded any blog till now.....</div>
+          <div style="margin-top:20%; font-size:30px;">You have not taken any appointment till now.....</div>
           <div style="font-size:30px; margin-top:10px;">let's get started</div>
-              <a href="/createblog/{{bog.username}}" class="btn btn-info mt-5">Create Post</a><span></span>
+              <a href="/createblog/{{bog.username}}" class="btn btn-info mt-5 mb-5">Take an appointment</a><span></span>
 
           {% else %}
+          <h2>Pending appointment</h2>
           {% for i in har reversed %}
           <div class="card mt-5 ml-5">
   <h2 class="card-header">
-               <img src="{{i.image}}" class="card-img-top mb-3" height="400px" width="90%">
 
-    {{i.title}}
+    {{i.name}}
   </h2>
        <h3 class="ml-4 mt-3"> {{i.catagory}}</h3>
-       <h4 class="ml-4">{{i.email}}</h4>
        <h6 class="ml-4">{{i.timestamp}}</h6>
   <div class="card-body">
-    <p class="card-text">{{i.textarea |truncatechars:200}}</p>
-    <a href="/blogpost/{{i.ids}}" class="btn btn-info">Read More</a>
 
-              <span><a href="/deletepost/{{i.ids}}" class="btn btn-info  ml-3">Delete Post</a></span>
+              <span><a href="/deletepost/{{i.ids}}" class="btn btn-info">Cancel appointment</a></span>
   </div>
 </div>
     {% endfor %}
+                  <h2 class="mt-5">Completed appointment</h2>
+
           {% endif %}
 
       </div>

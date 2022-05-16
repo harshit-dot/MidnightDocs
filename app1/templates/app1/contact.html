@@ -1,5 +1,5 @@
 {% extends 'app1/basic.html' %}
-{%  block title %} create blog {% endblock %}
+{%  block title %} Contact Us {% endblock %}
 {% block active3 %} active {% endblock %}
 {% block body %}
 {% load static %}
@@ -12,26 +12,24 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
 
-      <img src="{% static 'app1/bloge6.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h7.webp' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Create Your Blog</h5>
-<p>"The harder the conflict, the greater the triumph." George Washington
-
-</p>      </div>
+         <h5>― Steven Magee</h5>
+        <p>“Doctors and nurses are brave souls during a pandemic.”</p>    </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'app1/bloge7.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h8.webp' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Read Blogs</h5>
-<p> "Content is anything that adds value to the reader's life." Avinash Kaughik</p>      </div>
+        <h5>― Nitya Prakash</h5>
+        <p>“You sit in a hospital's emergency area and realize how god damn valuable health and life is - something so many of us takes for granted.”
+
+</p>         </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'app1/bloge4.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h9.jpg' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Interact with your fiends</h5>
-        <p>“Blogging is just writing — writing using a particularly efficient type of publishing technology.”
-
-</p>
+        <h5>― Aude Mermilliod</h5>
+        <p>“Doctors who want power will do anything to get it; healers will do anything to get away from it.”</p>
       </div>
     </div>
   </div>
@@ -49,7 +47,7 @@
 <div class="container mt-5 mb-5">
 
     <div class="row">
-        <div class="col col-md-8 col-sm-8 col-lg-8 col-xs-8">
+        <div class="col">
 
 <h2  style="font-family:cursive; text-align:center;">Contact Us</h2>
    <form action="contact" method="POST">
@@ -67,16 +65,12 @@
     <label for="exampleFormControlTextarea1">Message</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="11" name="textarea"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-dark">Submit</button>
 </form>
 
-        </div>
-      <div class="col col-md-4 col-lg-4 col-xs-4 col-sm-4">
-        <img src="{% static 'app1/bloge2.png' %}" width="350px" height="250px">
-      </div>
 
 
-    </div>
+
 
 
 </div>

@@ -1,5 +1,5 @@
 {% extends 'app1/basic.html' %}
-{%  block title %} profile {% endblock %}
+{%  block title %} Reading success stories {% endblock %}
 {% block active6 %} active {% endblock %}
 {% block body %}
 {% load static %}
@@ -11,26 +11,26 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'app1/blogw.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h1.jpg' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Create Your Blog</h5>
-        <p>“Don’t try to plan everything out to the very last detail. I’m a big believer in just getting it out there: create a minimal viable product or website, launch it, and get feedback.”</p>
+           <h5>― Steven Magee</h5>
+        <p>“Doctors and nurses are brave souls during a pandemic.”</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{% static 'app1/blogw1.png' %}" class="d-block w-100" height="500px" alt="...">
+      <img src="{% static 'app1/h2.png' %}" class="d-block w-100" height="500px" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Read Blogs</h5>
-        <p>“A blog is only as interesting as the interest shown in others.”</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'app1/blogw2.jpeg' %}" class="d-block w-100" height="500px" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Interact with your fiends</h5>
-        <p>“Blogging is just writing — writing using a particularly efficient type of publishing technology.”
+       <h5>― Nitya Prakash</h5>
+        <p>“You sit in a hospital's emergency area and realize how god damn valuable health and life is - something so many of us takes for granted.”
 
 </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app1/h3.jpg' %}" class="d-block w-100" height="500px" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      <h5>― Aude Mermilliod</h5>
+        <p>“Doctors who want power will do anything to get it; healers will do anything to get away from it.”</p>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
 <div class="container  mt-5 mb-5">
 <form>
     <div class="row mt-5">
-        <div class="col col-md-8 col-sm-8 col-lg-8 col-xs-8 ">
+        <div class="col ">
             <h1 class="mt-5" >Reading Blogpost {{i.title}}...</h1>
 
 
@@ -63,9 +63,8 @@
     <p class="card-text">{{i.textarea}}</p>
   </div>
 </div>
-        <div class="harsh ml-3 mt-5">
-           <img src="{% static 'app1/blogw3.jpg' %}" style="margin-top: 100px;"  height="250px" width="350px">
-        </div>
+
+
     </div>
 </form>
 </div>
