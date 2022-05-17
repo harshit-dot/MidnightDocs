@@ -1,0 +1,70 @@
+{% extends 'app1/basic.html' %}
+{%  block title %}  Global Covid19 Data {% endblock %}
+{% block body %}
+{% load static %}
+<h2 class="text-center mt-5 mb-5">Global Covid19 Data</h2>
+<div class="row">
+  <div class="col ml-5 mt-3 mb-5">
+    <div class="card" style="width: 18rem; background-color:#c9c6cb;">
+  <div class="card-body">
+    <h5 class="card-title">New confirmed Cases</h5>
+    <p class="card-text">{{globalSummary.NewConfirmed}}</p>
+  </div>
+</div>
+  </div>
+   <div class="col ml-5 mt-3 mb-5">
+    <div class="card" style="width: 18rem; background-color:#c9c6cb;">
+  <div class="card-body">
+    <h5 class="card-title">Total confirmed Cases</h5>
+    <p class="card-text">{{globalSummary.TotalConfirmed}}</p>
+  </div>
+</div>
+  </div>
+   <div class="col ml-5 mt-3 mb-5">
+    <div class="card" style="width: 18rem; background-color:#c9c6cb;">
+  <div class="card-body">
+    <h5 class="card-title">New Deaths</h5>
+    <p class="card-text">{{globalSummary.NewDeaths}}</p>
+  </div>
+</div>
+  </div>
+   <div class="col ml-5 mt-3 mb-5">
+    <div class="card" style="width: 18rem; background-color:#c9c6cb;">
+  <div class="card-body">
+    <h5 class="card-title">Total Deaths</h5>
+    <p class="card-text">{{globalSummary.TotalDeaths}}</p>
+  </div>
+</div>
+  </div>
+
+
+</div>
+<h2 class="text-center mt-5 mb-5">Country wise covid19 data</h2>
+<table class="table ml-5 mr-5">
+  <thead>
+    <tr>
+      <th scope="col">Country</th>
+      <th scope="col">Country Code</th>
+      <th scope="col">New Confirmed</th>
+      <th scope="col">Total Confirmed</th>
+      <th scope="col">New Deaths</th>
+      <th scope="col">Total Deaths</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for i in countries %}
+      <td>{{ i.Country }}</td>
+      <td>{{ i.CountryCode }}</td>
+      <td>{{ i.NewConfirmed }}</td>
+      <td>{{ i.TotalConfirmed }}</td>
+      <td>{{ i.NewDeaths }}</td>
+      <td>{{ i.TotalDeaths }}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

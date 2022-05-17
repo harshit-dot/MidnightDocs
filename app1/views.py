@@ -10,6 +10,7 @@ from django.contrib.auth.models import  User
 from django.core.files.storage import FileSystemStorage
 from django.contrib import messages #import messages
 from django.conf import settings
+import requests
 
 #
 def login(request):
@@ -242,3 +243,22 @@ def deletepost(request,id):
 
 
     return render(request,'app1/myprofile.html',{'bog':bog,'har':har, 'kar':kar})
+def covid(request):
+    data = True
+    result = None
+    globalSummary = None
+    countries = None
+    while (data):
+        try:
+            result = requests.get('https://api.covid19api.com/summary')
+            json = result.json()
+            print(json)
+            globalSummary = json['Global']
+            countries = json['Countries']
+
+            data = False
+        except:
+            data = True
+    return render(request, 'app1/corona.html',
+                  {'globalSummary': globalSummary,
+                   'countries': countries})

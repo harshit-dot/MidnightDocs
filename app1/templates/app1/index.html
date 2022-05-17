@@ -44,11 +44,15 @@
         <li class="nav-item">
         <a class="nav-link" href="contact">Contact Us</a>
       </li>
+        <li class="nav-item">
+        <a class="nav-link" href="covid">Covid19 Status</a>
+      </li>
         {% if user.is_authenticated %}
 
              <li class="nav-item">
         <a href="logout" type="button"   class="nav-link card" >Logout</a>
       </li>
+
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profile
@@ -74,6 +78,7 @@
          <li class="nav-item">
         <a data-target="#mymodal1" data-toggle="modal" type="button"  class="nav-link card " >SignUp</a>
       </li>
+       
         {% endif %}
 
 

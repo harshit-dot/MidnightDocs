@@ -17,6 +17,7 @@ urlpatterns = [
     path('forgot', views.forgot, name='forgot'),
     path('blogpost/<int:id>', views.blogpost, name='blogpost'),
     path('search', views.search, name='search'),
+    path('covid', views.covid, name='covid'),
     path('forgotpass/<str:id>',views.forgotpass,name='forgotpass'),
     path('forgotpass/changepassword/<str:id>', views.changepassword, name='changepassword'),
     path('deletepost/<int:id>', views.deletepost, name='deletepost')
