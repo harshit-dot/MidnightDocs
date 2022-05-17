@@ -9,6 +9,7 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import  User
 from django.core.files.storage import FileSystemStorage
 from django.contrib import messages #import messages
+from django.conf import settings
 
 #
 def login(request):
@@ -54,10 +55,12 @@ def createblog(request,names):
         from .models import appointment
         blog=appointment(catagory=catagoy, name=names, gender=gender, mobile_number=mobile_number, age=age, email=email)
         blog.save()
+        email_from=settings.EMAIL_HOST_USER
+
         send_mail(
             'we have just get your message regarding your doctor appointment (MidnightDocs)',
             'we will get back to you soon with all the details regarding your appointment query, till explore MidnightDocs website....',
-            'khannaharshit064@gmail.com',
+            email_from,
             [email],
             fail_silently=False,
         )
@@ -79,12 +82,12 @@ def contact(request):
 
             # pyautogui.alert('Enter All The Fields')
             return render(request, 'app1/contact.html')
+        email_from=settings.EMAIL_HOST_USER
         send_mail(
             'we have just get your query (MidnightDocs)',
             'we get your query, we will reply it as soon as possible till explore MidnightDocs website....',
-            'khannaharshit064@gmail.com',
-            [email],
-            fail_silently=False,
+            email_from,
+            [email]
         )
         from .models import contact
         con=contact(email=email, regarding=regarding, text=text)
@@ -106,31 +109,38 @@ def signup(request):
         first_name=request.POST['firstname']
         last_name=request.POST['lastname']
         email=request.POST['email']
+
         if username=='' or password=='' or password1=='' or first_name=='' or last_name=='' or email=='':
             # pyautogui.alert('Enter All The Fields')
             messages.error(request,'Enter All The Fields')
             return redirect('/')
-
-
-        if password1!=password:
-            messages.error(request,'Password Not Matched')
-
-            # pyautogui.alert(request, 'password not matched')
+        if len(password)<7:
+            messages.error(request, 'Password should be of atleast 7 letters')
             return redirect('/')
 
-        send_mail(
-            'Wow you have just signed up in MidnightDocs',
-            'congratulations your account is now setup. you can login through the main website and can take appointments.....',
-            'khannaharshit064@gmail.com',
-            [email],
-            fail_silently=False,
-        )
-        myuser = User.objects.create_user(username,email,password)
-        myuser.first_name=first_name
-        myuser.last_name=last_name
-        myuser.save()
-        messages.success(request, 'User Created')
-        return redirect('/')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'OOPS! ,Username already taken')
+            return redirect('/')
+        else:
+
+            if password1!=password:
+                messages.error(request,'Password Not Matched')
+                return redirect('/')
+            email_from=settings.EMAIL_HOST_USER
+
+            send_mail(
+                'Wow you have just signed up in MidnightDocs',
+                'congratulations your account is now setup. you can login through the main website and can take appointments.....',
+                email_from,
+                [email],
+                fail_silently=False,
+            )
+            myuser = User.objects.create_user(username,email,password)
+            myuser.first_name=first_name
+            myuser.last_name=last_name
+            myuser.save()
+            messages.success(request, 'User Created')
+            return redirect('/')
 
 
 
@@ -143,37 +153,33 @@ def forgot(request):
     if request.method=='POST':
         email=request.POST['email']
         username=request.POST['username']
-        # password=request.POST['password']
-        # password1=request.POST['password1']
-        # if password1!=password:
-        #     pyautogui.alert('password did not matched')
-        #     return redirect('/')
         if email=='' or username=='':
             messages.error(request,'Enter All The Fields')
             return redirect('forgot')
-        bog=User.objects.get(username=username, email=email)
-        if bog is None:
-            messages.error(request,'Username or Password Wrong')
 
-            return redirect('/')
+        if not User.objects.filter(username=username, email=email).exists():
+            messages.error(request,'Username or Email Wrong')
 
-
-        harsh='this is the link, click it http://midnightdocs.herokuapp.com/forgotpass/'+str(bog.id)
-        print(harsh)
-        print(bog.password)
-        send_mail(
-            'click the link to change your password MidnightDocs',
-            harsh,
-            'khannaharshit064@gmail.com',
-            [email],
-            fail_silently=False,
-        )
-        messages.success(request, 'Mail has been sent to your email address.')
+            return render(request, 'app1/forgot.html')
+        if User.objects.filter(username=username, email=email):
+            bog = User.objects.get(username=username, email=email)
+            harsh = 'This is the link, click it http://midnightdocs.herokuapp.com/forgotpass/' + str(bog.id)
+            print(harsh)
+            print(bog.password)
+            send_mail(
+                'click the link to change your password',
+                harsh,
+                'khannaharshit064@gmail.com',
+                [email],
+                fail_silently=False,
+            )
+            messages.success(request, 'Mail has been sent to your email address.')
         # pyautogui.confirm('mail has been sent to your email')
-        return render(request, 'app1/forgot.html')
+            return render(request, 'app1/forgot.html')
 
     else:
         return render(request, 'app1/forgot.html')
+
 def search(request):
     searchtex=request.POST['search']
 
