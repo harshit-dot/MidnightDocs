@@ -38,6 +38,12 @@ def createblog(request,names):
         mobile_number=request.POST['mobile-number']
         email=request.POST['email']
         age=request.POST['age']
+        if len(mobile_number)!=10:
+            messages.error(request, 'Enter the valid mobile number')
+
+            # pyautogui.alert('enter all the fields')
+            bar = get_user_model().objects.get(username=names)
+            return render(request, 'app1/createblog.html', {'bar': bar})
 
         if catagoy=='' or name=='' or gender=='' or mobile_number=='' or email=='' or age=='' :
             messages.error(request,'Enter All The Fields')
