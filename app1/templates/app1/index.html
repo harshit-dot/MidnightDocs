@@ -136,10 +136,10 @@
         <h1 class="mb-5" style="text-align: center; font-family: cursive;"> OUR SUCCESS STORIES</h1>
         </div>
 
-        <div class="container">
-  <div class="row mb-5">
+        <div class="container ">
+  <div class="row">
 
-    <div class="col" style="background-color:#dfcfee;">
+    <div class="col p-5" style="background-color:#dfcfee;">
       <div class="card mt-5 ">
            <img src="{% static 'app1/har.jpeg' %}" class="card-img-top" height="200px" width="80%">
 
@@ -157,9 +157,9 @@ baby was very bad, then Mr. Mehta got to know with his friend Mr. Khanna about o
 </div>
     </div>
 
-    <div class="col  " style="background-color:#c9c6cb;">
+    <div class="col p-5 " style="background-color:#c9c6cb;">
 
- <div class="card mt-5 ">
+ <div class="card mt-5">
            <img src="{% static 'app1/har2.jpeg' %}" class="card-img-top" height="200px" width="80%">
 
   <h2 class="card-header">
@@ -170,12 +170,12 @@ baby was very bad, then Mr. Mehta got to know with his friend Mr. Khanna about o
        <h6 class="ml-4">May 17, 2022, 1:08 a.m.</h6>
   <div class="card-body">
     <p class="card-text">Mr. Kumar got wet on a rainy day. After coming to home he had his bath. After few hours he felt ill with sneeze and fever. He was also feeling cold. Then he went to our website
-MidnightDocs and book an appointment and got his appointment within 5 minutes and got diagnosed. Mr. Kumar after having the medicines is now feeling well and happy and thanks MidnightDocs</p>
+MidnightDocs and book an appointment and got his appointment within 5 minutes and got diagnosed. Mr. Kumar after having the medicines is now feeling well and happy and thanks MidnightDocs &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
   </div>
 </div>
 </div>
 
-       <div class="col " style="background-color:#dfcfee;">
+       <div class="col p-5 " style="background-color:#dfcfee;">
       <div class="card mt-5 ">
            <img src="{% static 'app1/har3.jpeg' %}" class="card-img-top" height="200px" width="80%">
 
@@ -188,7 +188,7 @@ MidnightDocs and book an appointment and got his appointment within 5 minutes an
   <div class="card-body">
     <p class="card-text">Mrs. Istuti an Engineering student was suffering from various pain in the body from last few days. The pain was so severe that she even was not able to walk properly.
 She got to know to our websites MednightDocs and then book an appointment and got his appointment within 10 minutes and got diagnosed. After few days she got recoverd
-and again began to walk as earlier. </p>
+and again began to walk as earlier. Thank You MidnightDocs </p>
   </div>
 </div>
     </div>
@@ -203,18 +203,19 @@ and again began to walk as earlier. </p>
     </div>
 
 
-        <div class="container-fluid mt-5 mb-5" style=";
-    background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url({% static 'app1/har2.jpeg' %}) ;
+        <div class="container-fluid mt-5 mb-5 " style=";
+    background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url({% static 'app1/h6.jpeg' %}) ;
     background-size: 100%;
          background-position: center;
     background-attachment: fixed;
     color: aliceblue; ">
              <div class="mt-5 pt-5  text-center">
       {% if not user.is_authenticated %}
-        <h2 class="text-center mt-5 ">For having an appointment</h2>
-        <a class="nav-link btn-dark mt-5"  data-target="#mymodal" data-toggle="modal">Login</a>
-        <a data-target="#mymodal1" data-toggle="modal" type="button"  class="nav-link btn-dark mt-2" >SignUp</a>
-
+        <h2 class="text-center mt-5 mb-5">For having an appointment</h2>
+                 <div class="pb-5">
+                 <span><a class="btn text-center btn-dark"  data-target="#mymodal" data-toggle="modal">Login</a></span><span>
+                 <a data-target="#mymodal1" data-toggle="modal" type="button"  class="btn btn-dark " >SignUp</a></span>
+                 </div>
         {% else %}
             <h2>For having an appointment</h2>
             <a class=" mt-5 mb-5 btn btn-dark"  href="/createblog/{{user.username}}" style="text-align:center;">Take an appointment</a>
@@ -222,6 +223,52 @@ and again began to walk as earlier. </p>
         {% endif %}
         </div>
         </div>
+
+    <h2 class="text-center mt-5 mb-5" > Our Specialities</h2>
+    <div class="mb-5" style=";
+    background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url({% static 'app1/h5.jpeg' %}) ;
+    background-size: 100%;
+         background-position: center;
+    background-attachment: fixed;
+    color: aliceblue; ">
+<div class="row mt-5 mb-5 pl-5 pr-5" >
+    <div class="col mt-5">
+        <div class="" style="width: 18rem;">
+  <img class="card-img-top p-5" src="{% static 'app1/s1.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text "><h4 class="text-center">Gynacecolog</h4></p>
+  </div>
+</div>
+    </div>
+    <div class="col mt-5">
+        <div class="" style="width: 18rem;">
+  <img class="card-img-top p-5" src="{% static 'app1/s2.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text "><h4 class="text-center">Sexology</h4></p>
+  </div>
+</div>
+    </div>
+    <div class="col mt-5">
+        <div class="" style="width: 18rem;">
+  <img class="card-img-top p-5" src="{% static 'app1/s3.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text "><h4 class="text-center">General Physician</h4></p>
+  </div>
+</div>
+    </div>
+     <div class="col mt-5">
+        <div class="" style="width: 18rem;">
+  <img class="card-img-top p-5" src="{% static 'app1/s4.svg' %}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text "><h4 class="text-center">Dermatolog</h4></p>
+  </div>
+</div>
+    </div>
+</div>
+    <div class="text-center">
+                <a class=" mb-5 btn btn-primary"  href="specialization" style="">Read More</a>
+    </div>
+</div>
     <div class="modal" id="mymodal">
         <div class="modal-dialog">
             <div class="modal-content">

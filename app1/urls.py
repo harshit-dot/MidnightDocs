@@ -20,6 +20,7 @@ urlpatterns = [
     path('covid', views.covid, name='covid'),
     path('forgotpass/<str:id>',views.forgotpass,name='forgotpass'),
     path('forgotpass/changepassword/<str:id>', views.changepassword, name='changepassword'),
-    path('deletepost/<int:id>', views.deletepost, name='deletepost')
+    path('deletepost/<int:id>', views.deletepost, name='deletepost'),
+    path('specialization', views.specialization, name='specialization')
 
 ]

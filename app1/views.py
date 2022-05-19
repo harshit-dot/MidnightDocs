@@ -262,3 +262,5 @@ def covid(request):
     return render(request, 'app1/corona.html',
                   {'globalSummary': globalSummary,
                    'countries': countries})
+def specialization(request):
+    return render(request, 'app1/specialities.html')
